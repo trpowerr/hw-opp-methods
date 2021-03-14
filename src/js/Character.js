@@ -21,49 +21,51 @@ export default class Character {
   damage(points) {
     if (this.health > 0) {
       this.health -= points * (1 - this.defence / 100);
+    } else {
+      throw new Error('Персонаж мертв!');
     }
   }
 }
 
-class Bowman extends Character {
-  constructor(name) {
-    super(name);
+export class Bowman extends Character {
+  constructor(name, type) {
+    super(name, type);
     this.type = 'Bowman';
     this.attack = 25;
     this.defence = 25;
   }
 }
 
-class Swordman extends Character {
-  constructor(name) {
-    super(name);
+export class Swordsman extends Character {
+  constructor(name, type) {
+    super(name, type);
     this.type = 'Swordman';
     this.attack = 40;
     this.defence = 10;
   }
 }
 
-class Magician extends Character {
-  constructor(name) {
-    super(name);
+export class Magician extends Character {
+  constructor(name, type) {
+    super(name, type);
     this.type = 'Magician';
     this.attack = 10;
     this.defence = 40;
   }
 }
 
-class Undead extends Character {
-  constructor(name) {
-    super(name);
+export class Undead extends Character {
+  constructor(name, type) {
+    super(name, type);
     this.type = 'Undead';
     this.attack = 25;
     this.defence = 25;
   }
 }
 
-class Zombie extends Character {
-  constructor(name) {
-    super(name);
+export class Zombie extends Character {
+  constructor(name, type) {
+    super(name, type);
     this.type = 'Zombie';
     this.attack = 40;
     this.defence = 10;
@@ -71,8 +73,8 @@ class Zombie extends Character {
 }
 
 export class Daemon extends Character {
-  constructor(name) {
-    super(name);
+  constructor(name, type) {
+    super(name, type);
     this.type = 'Daemon';
     this.attack = 10;
     this.defence = 40;
