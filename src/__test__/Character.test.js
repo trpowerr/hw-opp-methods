@@ -17,7 +17,7 @@ test('levelUp validation input value', () => {
 });
 
 test('levelUp validation output value', () => {
-  const newPerson = new Daemon('Misha', 'Daemon');
+  const newPerson = new Daemon('Misha');
   newPerson.levelUp();
   const received = newPerson.level;
   const expected = 2;
@@ -25,7 +25,7 @@ test('levelUp validation output value', () => {
 });
 
 test('damage calculation check', () => {
-  const newPerson = new Daemon('Misha', 'Daemon');
+  const newPerson = new Daemon('Misha');
   newPerson.damage(20);
   const received = newPerson.health;
   const expected = 88;
@@ -34,18 +34,18 @@ test('damage calculation check', () => {
 
 test('damage validation output value', () => {
   expect(() => {
-    const received = new Character('Misha', 'Daemon');
+    const received = new Character('Misha');
     received.health = 0;
     received.damage(20);
   }).toThrow('Персонаж мертв!');
 });
 
 test('damage calculation check', () => {
-  let newPerson = new Daemon('Misha', 'Daemon');
-  newPerson = new Bowman('Misha', 'Bowman');
-  newPerson = new Swordsman('Misha', 'Daemon');
-  newPerson = new Magician('Misha', 'Magician');
-  newPerson = new Undead('Misha', 'Undead');
-  newPerson = new Zombie('Misha', 'Zombie');
+  let newPerson = new Daemon('Misha');
+  newPerson = new Bowman('Misha');
+  newPerson = new Swordsman('Misha');
+  newPerson = new Magician('Misha');
+  newPerson = new Undead('Misha');
+  newPerson = new Zombie('Misha');
   expect(true).toBe(true);
 });
